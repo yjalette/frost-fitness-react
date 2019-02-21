@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Heading from './Components/Header';
+import Services from './Components/Services';
+import BMI from './Components/BMI';
+import Reviews from './Components/Reviews';
+import Insta from './Components/Insta';
+import Footer from './Components/Footer';
+import Landing from './Components/Landing';
+import Advice from './Components/Advice';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Heading />
+        <Landing />
+        <Services />
+        <h1>Over the past 10 years, I have helped countless clients create the body they’ve always dreamt of. I specialize in weight loss or muscle gain and major body transformations.</h1>
+        <div id="fruit"></div>
+        <BMI />
+        <div id="sport"></div>
+        <Reviews />
+        <Advice />
+        <div id="dumbbells"></div>
+        <Insta />
+        <Footer />
       </div>
     );
   }

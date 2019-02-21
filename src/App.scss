@@ -1,0 +1,624 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Heebo|Poiret+One|Vollkorn');
+$font: bold 30px "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,"AppleGothic",sans-serif;
+$font-main: "Avant Garde", "Century Gothic","AppleGothic",sans-serif;
+
+$white: #D7D5D8;
+$gray: #424242;
+$black: #191D32;
+$blue: #1D4976;
+$light-gray: #9E9E9E;
+$m-gray: #6D3B47;
+$dark-gray: #191D32;
+
+$box-shadow: 1px 1px 47px 8px rgba(25,29,50,0.64);
+$box-shadow-blue: 1px 1px 14px 8px rgba(215,213,216,1);
+
+
+$big-desktop-width: 1300px;
+$desktop-width: 1024px;
+$tablet-width: 768px;
+$phone-width: 481px;
+$smDev-width: 0px;
+
+@mixin smDesktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$big-desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin smDev {
+    @media (min-width: #{$smDev-width}) and (max-width: #{$phone-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin border {
+    border: 0.5px solid $white;
+}
+
+@mixin column{
+    @include tablet {
+        flex-direction: column;
+    }
+    @include phone {
+        flex-direction: column;
+    }
+    @include smDev {
+        flex-direction: column;
+    }
+}
+@mixin width{
+    @include tablet {
+        width: 100%;
+    }
+    @include phone {
+        width: 100%;
+    }
+    @include smDev {
+        width: 100%;
+    }
+    
+}
+
+@mixin h {
+    @include centr;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    background-color: $black;
+    text-align: center;
+    font: $font;
+    text-transform: uppercase;
+    color: $blue;
+    letter-spacing: 2px;
+    text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
+    position: relative;
+    animation: services 3s infinite ease-in-out;
+    @include tablet {
+        font-size: 25px!important;
+        padding: 35px;
+        width: 100%;
+    }
+    @include phone {
+        font-size: 22px!important;
+        padding: 30px;
+        width: 100%;
+    }
+    @include smDev {
+        font-size: 17px!important;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+@mixin p {
+    color: $white;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 20px;
+    margin: auto;
+}
+
+@mixin span {
+    font-family: $font-main;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: auto;
+    @include smDesktop {
+        font-size: 40px;
+    }
+    @include tablet {
+        font-size: 30px;
+        text-shadow: none;
+    }
+    @include phone {
+        font-size: 25px;
+        text-align: center;
+        text-shadow: none;
+    }
+    @include smDev {
+        font-size: 20px;
+        text-align: center;
+        text-shadow: none;
+    }
+}
+
+@mixin button {
+    @include border;
+    background-color: $blue;
+    display: block;
+    padding: 9px 15px;
+    margin: auto;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: $font;
+    text-align: center;
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 2s;
+}
+
+@mixin b-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    filter: sepia(80%)
+}
+
+@mixin a {
+    text-decoration: none;
+    padding: 5px;
+    color: $blue;
+    text-transform: uppercase;
+}
+
+@mixin centr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    @include phone {
+        padding: 8px;
+    }
+    @include smDev {
+        padding: 2px;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: $white;
+}
+
+#header {
+    @include centr;
+    flex-direction: row!important;
+    height: fit-content;
+    padding: 2px;
+    font: $font;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $black;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #fff, 1px 1px 1px #363636;
+    @include phone {
+        flex-direction: row!important;
+    }
+    @include smDev {
+        height: auto;
+    }
+    h5 {
+        font: $font-main;
+        font-weight: 600;
+        text-align: left;
+        width: 80%;
+        padding: 15px;
+        @include phone {
+            padding: 2px;
+            width: 100%;
+        }
+        @include smDev {
+            padding: 2px;
+            width: 100%;
+        }
+    }
+    div {
+        @include centr;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 20%;
+        @include smDev {
+            flex-direction: row!important;
+            justify-content: center;
+            width: 100%;
+        }
+        button {
+            @include button;
+            @include smDev {
+                font-size: 10px;
+            }
+            a {
+                @include a;
+                i {
+                    color: $white;
+                }
+            }
+        }
+        button:hover {
+            color: $white;
+            font-weight: bold;
+        }
+
+    }
+}
+
+
+//landing
+
+#landing {
+    @include centr;
+    @include b-image;
+    flex-direction: row;
+    height: 100vh;
+    background-image: url(./images/background.jpg);
+    filter: sepia(20%);
+    animation: landing 2s forwards;
+    #headline {
+        @include span;
+        background: none;
+        color: $white;
+        font-weight: 900;
+        background-color: $black;
+        opacity: 0.8;
+        text-shadow: -1px -1px 1px #111, 2px 2px 1px $m-gray;
+        width: 100%;
+        text-align: center;
+        @include tablet {
+            position: absolute;
+            padding: 30px;
+        }
+        @include phone {
+            position: absolute;
+            padding: 15px;
+        }
+        @include smDev {
+            position: absolute;
+            padding: 10px;
+        }
+    }
+}
+
+@keyframes landing {
+    from {background-color: $white;}
+    to {}
+}
+
+.intro-image {
+    @include b-image;
+    background-image: url(./images/back-colors.png);
+}
+
+h1 {
+        @include h;
+        padding: 80px 20px;
+        animation: none;
+        box-shadow: $box-shadow;
+        @include smDev{
+            font-size: 18px!important;
+            text-align: center;
+            padding: 30px;
+        }
+    }
+
+#main-services {
+    position: relative;
+    border-bottom: 4px solid $blue;
+    background-color: $white;
+    @include centr;
+    h2 {
+        @include h;
+    }
+    .services {
+        @include centr;
+        box-shadow: $box-shadow;
+        flex-direction: row!important;
+        border-bottom: 4px solid $blue;
+        @include tablet {
+            flex-direction: column!important;
+        }
+        @include phone {
+            flex-direction: column!important;
+        }
+        @include smDev {
+            flex-direction: column!important;
+        }
+        
+        p {
+            @include p;
+            color: $black;
+            margin: 10px;
+            @include smDev {
+                font-size: 17px;
+            }
+        }
+        img{
+            width: 20%;
+            @include tablet {
+                width: 30%;
+            }
+            @include phone {
+                width: 50%;
+            }
+            @include smDev {
+                width: 70%;
+            }
+        }
+    }
+}
+
+@keyframes services {
+    from {}
+    to {color: $white;}
+}
+
+#fruit {
+    @include b-image;
+    background-image: url(./images/fruit.jpg);
+    filter: sepia(40%);
+}
+
+#sport {
+    @include b-image();
+    background-image: url(./images/sport.jpg);
+}
+
+#dumbbells {
+    @include b-image();
+    background-image: url(./images/dumbbells.jpg);
+}
+
+#main-bmi {
+    @include centr;
+    background-color: $white;
+    border-top: 4px solid $white;
+    border-bottom: 4px solid $blue;
+    @include phone {
+        padding: 20px;
+    }
+    @include smDev {
+        padding: 10px;
+    }  
+    p {
+       @include p;
+       color: $black;
+    }
+    #showBmi {
+        @include centr;
+        flex-direction: row;
+        box-shadow: $box-shadow;
+        @include column;
+        #bmi-section {
+            background-color: $black;
+            width: 50%;
+            @include centr;
+            @include width;
+            #bmi-form {
+                @include centr;
+                label {
+                    color: $blue;
+                }
+                input {
+                    width: 70%;
+                    height: 30px;
+                    margin: 15px;
+                    background-color: $white;
+                }
+                #bmi-submit {
+                    @include button;
+    
+                }
+                #bmi-submit:hover {
+                    background-color: $white;
+                    color: $blue;
+                }
+            }
+                #userBmi{
+                    color: $blue;
+                    text-align: center;
+                    padding: 15px;
+                }
+        }
+        #bmi-chart {
+            width: 50%;
+            @include width;
+            @include smDev {
+               display: none;
+            }
+        }
+    
+    }
+    
+}
+
+#main-reviews {
+    @include centr;
+    background-color: $white;
+    border-bottom: 4px solid $white;
+    .wrapper {
+        @include centr;
+        @include column;
+        box-shadow: $box-shadow;
+        @include tablet {
+            flex-direction: row;
+        }
+        flex-direction: row;
+    .carousel {
+        @include centr;
+        overflow: hidden;
+        width: 100%;
+        padding: 50px;
+        .carousel-control-next-icon, .carousel-control-prev-icon, .carousel-indicators{
+            display: none;
+        }
+        .carousel-item{
+            width: 60%;
+            left: 30%;
+            @include width;
+            @include tablet {
+                left: 0%;
+            }
+            @include phone {
+                left: 0%;
+            }
+            @include smDev {
+                left: 0%;
+            }
+            h3 {
+                opacity: 0.7;
+                height: fit-content;
+                font-size: 18px;
+            }
+            img {
+                width: 100%;
+                filter: sepia(50%);
+            }
+            .carousel-caption{
+                padding: 10px;
+                color: $blue;
+                font-style: italic;
+                background-color: $white;
+                opacity: 0.85;
+    
+            }
+            .d-none {
+                display: block!important;
+            }
+        } 
+    }
+    .rightPlace{
+        width: 100%;
+        background-color: $blue;
+        box-shadow: $box-shadow;
+        p{
+            @include p;
+        }
+        }
+    }
+}
+
+#main-advice {
+    @include centr;
+    background-color: $black;
+    button {
+        @include button;
+        margin: 20px 0px;
+        a {
+            @include a;
+            color: $white;
+            font: $font;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    button:hover {
+        transform: rotateX(180deg);
+        background-color: $white;
+    }
+}
+
+
+#api-results {
+    @include centr;
+    background-color: $white;
+    height: fit-content;
+    #insta {
+        @include centr;
+        @include column;
+        box-shadow: $box-shadow;
+        background-color: $white;
+        flex-direction: row;
+        @include tablet {
+            flex-direction: row;
+        }
+        img {
+            @include border;
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px;
+            margin: 1px;
+            width: 120px;
+            height: 120px;
+            @include smDesktop {
+                width: 80px;
+                height: 80px;
+            }
+            @include tablet {
+                width: 70px;
+                height: 70px;
+            }
+            @include phone {
+                width: 250px;
+                height: 250px;
+            }
+            @include smDev {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        img:hover {
+            box-shadow: 0 5px 15px gba(0, 0, 0, 0.4);
+            opacity: 1;
+            transform: scale(1.3);
+        }
+    }
+}
+
+footer {
+    height: 70px;
+    background-color: $black;
+    display: block;
+    vertical-align: text-bottom;
+    border-top: 4px solid $blue;
+    p {
+        color: $white;
+        display: inline-block;
+        padding: 5px;
+        margin-right: 15px;
+        line-height: 3;
+        float: right;
+    }
+    #footer-ul {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+        overflow: hidden;
+        li {
+            display: inline;
+            i {
+                color: $white;
+                font-size: 20px;
+                padding: 5px;
+            }
+        }
+    }
+
+}
