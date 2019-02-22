@@ -16,7 +16,7 @@ class App extends Component {
         <Heading />
         <Landing />
         <Services />
-        <h1>Over the past 10 years, I have helped countless clients create the body they’ve always dreamt of. I specialize in weight loss or muscle gain and major body transformations.</h1>
+        <h1>Over the past 10 years, I have helped countless clients create the body they’ve always dreamt of.</h1>
         <div id="fruit"></div>
         <BMI />
         <div id="sport"></div>

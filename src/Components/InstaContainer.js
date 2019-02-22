@@ -10,7 +10,7 @@ class InstaContainer extends Component{
         .then(res => {
             console.log(res)
            this.setState({
-               items: res.data.data.slice(0, 10)
+               items: res.data.data.slice(0, 5)
            })
         })
     }

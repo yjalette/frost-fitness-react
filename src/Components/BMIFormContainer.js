@@ -42,8 +42,8 @@ class BMIFormContainer extends Component {
                        <input type="number" name="ft" id="feet" value={this.state.ft} onChange={this.handleChange}/>
                        <label htmlFor="inches">inch</label>
                        <input type="number" name="inch" id="inches" value={this.state.inch} onChange={this.handleChange}/>
-                       <button type="button" value="count" id="bmi-submit" onClick={this.handleClick}>count</button>
                    </form>
+                   <button type="button" value="count" id="bmi-submit" onClick={this.handleClick}>count</button>
                    <span id="userBmi" name="result" onChange={this.handleChange}> Your BMI: {this.state.result}</span>
             </section>
         )

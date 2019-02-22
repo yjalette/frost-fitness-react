@@ -101,7 +101,7 @@ $smDev-width: 0px;
     letter-spacing: 2px;
     text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
     position: relative;
-    animation: services 3s infinite ease-in-out;
+    animation: services 5s infinite ease-in-out alternate;
     @include tablet {
         font-size: 25px!important;
         padding: 35px;
@@ -117,6 +117,10 @@ $smDev-width: 0px;
         padding: 5px;
         width: 100%;
     }
+}
+
+@keyframes services {
+    100% {color: $white}
 }
 
 @mixin p {
@@ -259,6 +263,10 @@ body {
                 @include a;
                 i {
                     color: $white;
+                    transition: 2s;
+                }
+                i:hover{
+                    color: $blue;
                 }
             }
         }
@@ -280,7 +288,6 @@ body {
     height: 100vh;
     background-image: url(./images/background.jpg);
     filter: sepia(20%);
-    animation: landing 2s forwards;
     #headline {
         @include span;
         background: none;
@@ -304,11 +311,6 @@ body {
             padding: 10px;
         }
     }
-}
-
-@keyframes landing {
-    from {background-color: $white;}
-    to {}
 }
 
 .intro-image {
@@ -374,11 +376,6 @@ h1 {
     }
 }
 
-@keyframes services {
-    from {}
-    to {color: $white;}
-}
-
 #fruit {
     @include b-image;
     background-image: url(./images/fruit.jpg);
@@ -418,10 +415,12 @@ h1 {
         #bmi-section {
             background-color: $black;
             width: 50%;
+            height: 600px;
             @include centr;
             @include width;
             #bmi-form {
                 @include centr;
+                margin-top: 20px;
                 label {
                     color: $blue;
                 }
@@ -440,6 +439,9 @@ h1 {
                     color: $blue;
                 }
             }
+                button {
+                    @include button;
+                }
                 #userBmi{
                     color: $blue;
                     text-align: center;
@@ -447,7 +449,10 @@ h1 {
                 }
         }
         #bmi-chart {
+            @include centr;
             width: 50%;
+            box-shadow: $box-shadow;
+            height: 650px;
             @include width;
             @include smDev {
                display: none;
@@ -465,6 +470,8 @@ h1 {
     .wrapper {
         @include centr;
         @include column;
+        height: 650px;
+        background-color: $black;
         box-shadow: $box-shadow;
         @include tablet {
             flex-direction: row;
@@ -474,7 +481,6 @@ h1 {
         @include centr;
         overflow: hidden;
         width: 100%;
-        padding: 50px;
         .carousel-control-next-icon, .carousel-control-prev-icon, .carousel-indicators{
             display: none;
         }
@@ -506,7 +512,6 @@ h1 {
                 font-style: italic;
                 background-color: $white;
                 opacity: 0.85;
-    
             }
             .d-none {
                 display: block!important;
@@ -514,12 +519,12 @@ h1 {
         } 
     }
     .rightPlace{
-        width: 100%;
+        @include centr;
         background-color: $blue;
-        box-shadow: $box-shadow;
-        p{
+        height: 500px;
+        p {
             @include p;
-        }
+            }
         }
     }
 }
@@ -559,7 +564,7 @@ h1 {
             flex-direction: row;
         }
         img {
-            @include border;
+            box-shadow: $box-shadow;
             display: inline-block;
             cursor: pointer;
             padding: 5px;
