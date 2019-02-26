@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
+import {Image} from 'react-bootstrap';
+import fruit from './images/fruit.jpg';
+import sport from './images/sport.jpg';
+import dumbbells from './images/dumbbells.jpg';
+
 import Heading from './Components/Header';
 import Services from './Components/Services';
 import BMI from './Components/BMI';
@@ -19,10 +24,10 @@ class App extends Component {
         <h1>Over the past 10 years, I have helped countless clients create the body they’ve always dreamt of.</h1>
         <div id="fruit"></div>
         <BMI />
-        <div id="sport"></div>
+        <Image src={sport} alt="" className="b-image" fluid/>
         <Reviews />
         <Advice />
-        <div id="dumbbells"></div>
+        <Image src={dumbbells} alt="" className="b-image" fluid/>
         <Insta />
         <Footer />
       </div>

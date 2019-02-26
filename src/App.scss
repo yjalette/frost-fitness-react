@@ -64,6 +64,17 @@ $smDev-width: 0px;
     border: 0.5px solid $white;
 }
 
+@mixin parallax { 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: sepia(80%);
+    -webkit-filter: sepia(80%);
+        @include smDev{
+            background-attachment: scroll;
+        }
+  }
+
 @mixin column{
     @include tablet {
         flex-direction: column;
@@ -177,19 +188,6 @@ $smDev-width: 0px;
     transition: 2s;
 }
 
-@mixin b-image {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 400px;
-    filter: sepia(80%);
-    -webkit-filter: sepia(80%);
-            filter: sepia(80%);
-            @include smDev{
-                background-size: 100%;
-            }
-}
-
 @mixin a {
     text-decoration: none;
     padding: 5px;
@@ -219,6 +217,12 @@ $smDev-width: 0px;
     @include smDev {
         padding: 2px;
     }
+}
+
+#fruit {
+    @include parallax;
+    background-image: url(./images/fruit.jpg);
+    height: 600px;
 }
 
 html,
@@ -314,17 +318,16 @@ body {
 }
 //landing
 #landing {
-    @include centr;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(./images/background.jpg);
     -webkit-filter: sepia(20%);
     filter: sepia(20%);
     flex-direction: row;
     height: 100vh;
+    img {
+        z-index: 1;
+    }
     #headline {
         @include span;
+        z-index: 2;
         background: none;
         color: $white;
         font-weight: 900;
@@ -333,24 +336,18 @@ body {
         text-shadow: -1px -1px 1px #111, 2px 2px 1px $m-gray;
         width: 100%;
         text-align: center;
+        position: absolute;
+        top: 30%;
         @include tablet {
-            position: absolute;
             padding: 30px;
         }
         @include phone {
-            position: absolute;
             padding: 15px;
         }
         @include smDev {
-            position: absolute;
             padding: 10px;
         }
     }
-}
-
-.intro-image {
-    @include b-image;
-    background-image: url(./images/back-colors.png);
 }
 
 h1 {
@@ -411,22 +408,6 @@ h1 {
             }
         }
     }
-}
-
-#fruit {
-    @include b-image;
-    background-image: url(./images/fruit.jpg);
-    filter: sepia(40%);
-}
-
-#sport {
-    @include b-image();
-    background-image: url(./images/sport.jpg);
-}
-
-#dumbbells {
-    @include b-image();
-    background-image: url(./images/dumbbells.jpg);
 }
 
 #main-bmi {
