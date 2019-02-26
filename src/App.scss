@@ -101,6 +101,7 @@ $smDev-width: 0px;
     letter-spacing: 2px;
     text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
     position: relative;
+    -webkit-animation: services 5s infinite ease-in-out alternate;
     animation: services 5s infinite ease-in-out alternate;
     @include tablet {
         font-size: 25px!important;
@@ -119,6 +120,9 @@ $smDev-width: 0px;
     }
 }
 
+@-webkit-keyframes services {
+    100% {color: $white}
+}
 @keyframes services {
     100% {color: $white}
 }
@@ -179,7 +183,9 @@ $smDev-width: 0px;
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
-    filter: sepia(80%)
+    filter: sepia(80%);
+    -webkit-filter: sepia(80%);
+            filter: sepia(80%);
 }
 
 @mixin a {
@@ -191,10 +197,19 @@ $smDev-width: 0px;
 
 @mixin centr {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 50px;
     @include phone {
         padding: 8px;
@@ -214,7 +229,7 @@ body {
 
 #header {
     @include centr;
-    flex-direction: row!important;
+    flex-direction: row;
     height: fit-content;
     padding: 2px;
     font: $font;
@@ -235,6 +250,10 @@ body {
         text-align: left;
         width: 80%;
         padding: 15px;
+        .fa-snowflake-o {
+            -webkit-animation: snowflake 5s infinite alternate;
+                    animation: snowflake 5s infinite alternate;
+        }
         @include phone {
             padding: 2px;
             width: 100%;
@@ -277,16 +296,28 @@ body {
 
     }
 }
-
-
+@-webkit-keyframes snowflake {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg)};
+    25% { -webkit-transform: rotate(90deg); transform: rotate(90deg)};
+    50% { -webkit-transform: rotate(180deg); transform: rotate(180deg)};
+    75% { -webkit-transform: rotate(270deg); transform: rotate(270deg)};
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}
+}
+@keyframes snowflake {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg)};
+    25% { -webkit-transform: rotate(90deg); transform: rotate(90deg)};
+    50% { -webkit-transform: rotate(180deg); transform: rotate(180deg)};
+    75% { -webkit-transform: rotate(270deg); transform: rotate(270deg)};
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}
+}
 //landing
-
 #landing {
     @include centr;
     @include b-image;
     flex-direction: row;
     height: 100vh;
     background-image: url(./images/background.jpg);
+    -webkit-filter: sepia(20%);
     filter: sepia(20%);
     #headline {
         @include span;
@@ -322,6 +353,7 @@ h1 {
         @include h;
         padding: 80px 20px;
         animation: none;
+        -webkit-animation: none;
         box-shadow: $box-shadow;
         @include smDev{
             font-size: 18px!important;
@@ -340,8 +372,8 @@ h1 {
     }
     .services {
         @include centr;
+        flex-direction: row;
         box-shadow: $box-shadow;
-        flex-direction: row!important;
         border-bottom: 4px solid $blue;
         @include tablet {
             flex-direction: column!important;
@@ -351,8 +383,7 @@ h1 {
         }
         @include smDev {
             flex-direction: column!important;
-        }
-        
+        }     
         p {
             @include p;
             color: $black;
@@ -368,9 +399,11 @@ h1 {
             }
             @include phone {
                 width: 50%;
+                padding: 5px;
             }
             @include smDev {
-                width: 70%;
+                width: 100%;
+                padding: 2px;
             }
         }
     }
@@ -452,7 +485,7 @@ h1 {
             @include centr;
             width: 50%;
             box-shadow: $box-shadow;
-            height: 650px;
+            height: 600px;
             @include width;
             @include smDev {
                display: none;
@@ -471,7 +504,7 @@ h1 {
         @include centr;
         @include column;
         height: 650px;
-        background-color: $black;
+        background-color: $white;
         box-shadow: $box-shadow;
         @include tablet {
             flex-direction: row;
@@ -520,7 +553,8 @@ h1 {
     }
     .rightPlace{
         @include centr;
-        background-color: $blue;
+        background-color: $black;
+        box-shadow: $box-shadow;
         height: 500px;
         p {
             @include p;
@@ -544,7 +578,8 @@ h1 {
         }
     }
     button:hover {
-        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+                transform: rotateX(180deg);
         background-color: $white;
     }
 }

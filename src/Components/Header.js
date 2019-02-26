@@ -5,7 +5,7 @@ class Heading extends Component {
     render(){
         return (
             <div id="header" className="nav-wrapper">
-                <h5>FROST FITNESS<i className="fa fa-snowflake-o"></i></h5>
+                <h5>FROST<i className="fa fa-snowflake-o"></i>FITNESS</h5>
                 <div>
                     <button className="active" id="home"><a href="https://www.instagram.com/5050ifbbpro_frosthardny/"><i className="fa fa-instagram "></i></a></button>
                     <button id="ser-a" onClick={this.handleServices}><a href="https://www.facebook.com/aaron.a.harvey.50 "><i className="fa fa-facebook-square "></i></a></button>
