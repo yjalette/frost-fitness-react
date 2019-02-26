@@ -181,7 +181,6 @@ $smDev-width: 0px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     height: 400px;
     filter: sepia(80%);
     -webkit-filter: sepia(80%);
@@ -251,8 +250,8 @@ body {
         width: 80%;
         padding: 15px;
         .fa-snowflake-o {
-            -webkit-animation: snowflake 5s infinite alternate;
-                    animation: snowflake 5s infinite alternate;
+            -webkit-animation: snowflake 5s infinite ease-in-out alternate;
+                    animation: snowflake 5s infinite ease-in-out alternate;
         }
         @include phone {
             padding: 2px;
