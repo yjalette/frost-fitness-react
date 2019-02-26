@@ -185,6 +185,10 @@ $smDev-width: 0px;
     filter: sepia(80%);
     -webkit-filter: sepia(80%);
             filter: sepia(80%);
+            @include smDev{
+                background-size: 100%;
+                image-rendering: -webkit-optimize-contrast;
+            }
 }
 
 @mixin a {
@@ -497,6 +501,7 @@ h1 {
 
 #main-reviews {
     @include centr;
+    height: fit-content;
     background-color: $white;
     border-bottom: 4px solid $white;
     .wrapper {
