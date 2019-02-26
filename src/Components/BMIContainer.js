@@ -55,6 +55,7 @@ class BMIContainer extends Component{
        
         return(
             <section id="bmi-chart">
+                <h2>BMI chart</h2>
                 <Pie data={this.state.chartData} 
                      options = {this.state.chartOptions} />             
             </section>
