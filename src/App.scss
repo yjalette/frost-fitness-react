@@ -187,7 +187,6 @@ $smDev-width: 0px;
             filter: sepia(80%);
             @include smDev{
                 background-size: 100%;
-                image-rendering: -webkit-optimize-contrast;
             }
 }
 
@@ -316,12 +315,14 @@ body {
 //landing
 #landing {
     @include centr;
-    @include b-image;
-    flex-direction: row;
-    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-image: url(./images/background.jpg);
     -webkit-filter: sepia(20%);
     filter: sepia(20%);
+    flex-direction: row;
+    height: 100vh;
     #headline {
         @include span;
         background: none;
