@@ -6,7 +6,7 @@ Frost Fitness: Personal Training, Nutrition Coaching & Competitive Bodybuilding
 
 
 ## Working Prototype
-You can access a working prototype of the app at https://frost-fitness-react.herokuapp.com/
+You can access a working prototype of the app at https://yjalette.github.io/frost-fitness-react/
 
 
 ### Technical part
