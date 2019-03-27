@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Heading from './Components/Header';
-import Services from './Components/Services';
-import BMI from './Components/BMI';
-import Reviews from './Components/Reviews';
-import Insta from './Components/Insta';
-import Footer from './Components/Footer';
-import Landing from './Components/Landing';
-import Advice from './Components/Advice';
+import Heading from './components/Header';
+import Services from './components/Services';
+import BMI from './components/BMI';
+import Reviews from './components/Reviews';
+import Insta from './components/Insta';
+import Footer from './components/Footer';
+import Landing from './components/Landing';
+import Advice from './components/Advice';
 
 class App extends Component {
   render() {

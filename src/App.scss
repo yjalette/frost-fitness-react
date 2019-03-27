@@ -575,11 +575,23 @@ h1 {
                 
             }
             .carousel-caption{
-                padding: 10px;
+                @include centr;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 color: $blue;
                 font-style: italic;
                 background-color: $white;
                 opacity: 0.85;
+                @include phone {
+                    left: 0%;
+                    height: 100%;
+                }
+                @include smDev {
+                    left: 0%;
+                    height: 100%;
+                    width: 100%;
+                }
             }
             .d-none {
                 display: block!important;
@@ -593,6 +605,10 @@ h1 {
         height: 500px;
         p {
             @include p;
+            @include smDev {
+               font-size: 15px;
+               padding: 4px;
+            }
             }
         }
     }
@@ -655,7 +671,7 @@ h1 {
                 width: 60%;
             }
             img {
-                opacity: 0.7;
+                opacity: 0.2;
                 filter: sepia(100%); 
                 -webkit-filter: sepia(100%); 
             }
