@@ -53,7 +53,7 @@ class ReviewsContainer extends Component {
           <Image className="d-block w-100" src={client2} alt="Third slide" rounded/>
           <Carousel.Caption>
             <h3>Mark / 25, blogger</h3>
-            <p>"Amazing trainer! I definitely reached my fitness goals with his help and guidance. The exercises were challenging, but he made it fun at the same time!"</p>
+            <p>"Great trainer! I definitely reached my fitness goals with his help and guidance. The exercises were challenging, but he made it fun at the same time!"</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
