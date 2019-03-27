@@ -451,7 +451,10 @@ h1 {
     }  
     p {
        @include p;
-       color: $black;
+       color: gray;
+       padding: 30px;
+       margin: 10px 0px;
+       text-align: center;
     }
     #showBmi {
         @include centr;
@@ -520,6 +523,8 @@ h1 {
             }
             h2 {
                 @include h;
+                @include centr;
+                margin-bottom: 100px;
             }
         }
     
