@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/frost-fitness-react/precache-manifest.3e2a3270e375cbba40a506db3f3d8bf2.js"
+  "/frost-fitness-react/precache-manifest.bef25bdb20048829ecb2b0f62891dda9.js"
 );
 
 workbox.clientsClaim();

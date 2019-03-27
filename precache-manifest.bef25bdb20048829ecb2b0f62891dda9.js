@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/frost-fitness-react/static/media/client2.fbef4bda.jpg"
   },
   {
-    "revision": "61cdc80d6f7d36a2f3c4",
-    "url": "/frost-fitness-react/static/css/main.041b9620.chunk.css"
+    "revision": "a0c0c352cf1f7ad7e5d9",
+    "url": "/frost-fitness-react/static/css/main.9da12efd.chunk.css"
   },
   {
     "revision": "943a1c1aefc16b612422",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/frost-fitness-react/static/media/client1.0604884e.jpg"
   },
   {
-    "revision": "61cdc80d6f7d36a2f3c4",
-    "url": "/frost-fitness-react/static/js/main.61cdc80d.chunk.js"
+    "revision": "a0c0c352cf1f7ad7e5d9",
+    "url": "/frost-fitness-react/static/js/main.a0c0c352.chunk.js"
   },
   {
     "revision": "6c28430a3914bae95c32795ebf9fedc5",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/frost-fitness-react/static/media/background.a837f10c.jpg"
   },
   {
-    "revision": "23b427de9cdb1ebb79ae73a9ba0ba275",
+    "revision": "54e763beba00f093eb0a15fddd903333",
     "url": "/frost-fitness-react/index.html"
   }
 ];
